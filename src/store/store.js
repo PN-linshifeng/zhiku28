@@ -1,14 +1,15 @@
 import AppStateClass from './appState';
 import NewsStore from './newsStore';
+import EXStore from './exStore'
 // import  from './appState';
 
 export const AppState = AppStateClass;
 
-
 const AppStatess = (init = {}) => {
   return {
     appState: new AppState(init.appState),
-    newsStore: new NewsStore(init.newsStore)
+    newsStore: new NewsStore(init.newsStore),
+    eXStore: new EXStore(init.eXStore)
   }
 }
 export default AppStatess
@@ -16,6 +17,7 @@ export default AppStatess
 export const createStoreMap = () => {
   return {
     appState: new AppState(),
-    newsStore: new NewsStore()
+    newsStore: new NewsStore(),
+    eXStore: new EXStore()
   }
 }

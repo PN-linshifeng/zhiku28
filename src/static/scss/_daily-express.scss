@@ -1,0 +1,249 @@
+.daily-express-bn{
+	background: url(../images/daily-express.jpg) no-repeat center top;
+}
+.daily-express-list{
+	padding-top:30px;
+	overflow: hidden;
+	ul{
+		margin-left: -25px;
+		margin-right: -25px;
+		overflow:hidden;
+		li{
+			width: 33.33%;
+			float:left;
+			padding:0px 25px 100px;
+			&:nth-child(9n+1){
+				.icon{
+					height:99px;
+					background:url(../sprite/daily-iocn-01.png) no-repeat center center;
+				}
+			}
+			&:nth-child(9n+2){
+				.icon{
+					height:79px;
+					background:url(../sprite/daily-iocn-02.png) no-repeat center center;
+				}
+			}
+			&:nth-child(9n+3){
+				.icon{
+					height:80px;
+					background:url(../sprite/daily-iocn-03.png) no-repeat center center;
+				}
+			}
+			&:nth-child(9n+4){
+				.icon{
+					height:87px;
+					background:url(../sprite/daily-iocn-04.png) no-repeat center center;
+				}
+			}
+			&:nth-child(9n+5){
+				.icon{
+					height:95px;
+					background:url(../sprite/daily-iocn-05.png) no-repeat center center;
+				}
+			}
+			&:nth-child(9n+6){
+				.icon{
+					height:92px;
+					background:url(../sprite/daily-iocn-06.png) no-repeat center center;
+				}
+			}
+			&:nth-child(9n+7){
+				.icon{
+					height:96px;
+					background:url(../sprite/daily-iocn-07.png) no-repeat center center;
+				}
+			}
+			&:nth-child(9n+8){
+				.icon{
+					height:80px;
+					background:url(../sprite/daily-iocn-08.png) no-repeat center center;
+				}
+			}
+			&:nth-child(9n){
+				.icon{
+					height:87px;
+					background:url(../sprite/daily-iocn-09.png) no-repeat center center;
+				}
+			}
+			.box{
+				position: relative;
+				.hd{
+					height:170px;
+					background:#0f68eb;
+					background:linear-gradient(to bottom,#0f68eb,#173bc8);
+					border-radius:10px 10px 0 0;
+					text-align:center;
+					color:#fff;
+					padding-top: 30px;
+					position: relative;
+					h3{
+						font-weight: 500;
+						line-height:1.1;
+
+					}
+					.big{
+						font-size:27px;
+						padding-bottom: 5px;
+					}
+					.min{
+						font-size:20px;
+					}
+					.icon{
+						width:132px;
+						position: absolute;
+						bottom:-46px;
+						left:50%;
+						margin-left:(-132px / 2);
+					}
+					.daily-iocn-01{
+						height:99px;
+						
+					}
+				}
+				.bd{
+					border: 1px solid #e2e2e2;
+					border-top:none;
+					padding:80px 30px 20px 30px;
+					.theme{
+						font-size:24px;
+					}
+					.time{
+						font-size:12px;
+						color:#999;
+					}
+					.info{
+						padding-top:10px;
+						height:100px;
+						overflow : hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 4;
+						-webkit-box-orient: vertical;
+					}
+				}
+				.btn-control{
+					position: absolute;
+					bottom:-20px;
+					left:15%;
+					width:70%;
+					height:40px;
+					border-radius:20px;
+					background:#1b3ec9;
+					background:linear-gradient(to left,#1b3ec9,#0e95a5);
+					box-shadow: 0px 5px 18px #d7e5ff;
+					cursor: pointer;
+					.icon{
+						width:40px;
+						height:100%;
+						line-height:36px;
+						text-align:center;
+						border:2px solid #0e95a5;
+						border-radius:20px;
+						background:#fff;
+					}
+					&:before{
+							width:100%;
+							height:100%;
+							position: absolute;
+							left:0px;
+							top:0px;
+							text-align:center;
+							line-height:40px;
+							color:#fff;
+							font-size:16px;
+						}
+					span{
+						margin-top:-1px;
+						display:inline-block;
+						vertical-align: middle;
+					}
+					&.btn-play{
+						span{
+							width:20px;
+							height:21px;
+							background:url(../sprite/play.png) no-repeat center center;
+						}
+						&:before{
+							content:"点击播放";
+						}
+					}
+					&.btn-none{
+						span{
+							width:18px;
+							height:17px;
+							background:url(../sprite/btn-none.png) no-repeat center center;
+						}
+						&:before{
+							content:"加载失败";
+						}
+					}
+					&.btn-none{
+						span{
+							width:18px;
+							height:17px;
+							background:url(../sprite/btn-none.png) no-repeat center center;
+						}
+						&:before{
+							content:"加载失败";
+						}
+					}
+					&.btn-pause{
+						span{
+							width:16px;
+							height:16px;
+							background:url(../sprite/btn-pause2.png) no-repeat center center;
+						}
+						&:before{
+							content:"正在播放中";
+						}
+					}
+					&.btn-waiting{
+						span{
+							width:24px;
+							height:19px;
+							background:url(../sprite/btn-wait.png) no-repeat center center;
+							animation: rotate 4s linear infinite;
+							@include keysframe(rotate){
+								0%{
+									transform:rotate(0deg);
+								}
+								100%{
+									transform:rotate(360deg);
+								}
+							}
+						}
+						&:before{
+							content:"正在加载中";
+						}
+					}
+				}
+			}
+		}
+	}
+	@include media($max-width:1100px){
+		ul{
+			margin-left: -5px;
+			margin-right: -5px;
+			li{
+				padding-left: 5px;
+				padding-right:5px;
+				.box{
+					.bd{
+						padding: 50px 20px 30px 20px;
+					}
+				}
+			}
+		}
+	}
+	@include phoneVertical{
+		ul{
+			li{
+				width:100%;
+				.info{
+					
+				}
+			}
+		}
+	}
+}

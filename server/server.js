@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require("fs");
 const favicon = require('express-favicon');
 const path = require("path")
+var proxy = require('http-proxy-middleware');
 const serverRender = require('./util/server-render')
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -9,6 +10,11 @@ const app = express();
 
 
 app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
+app.use(['/api'], proxy({ target: 'https://content.aetoscg-asia.com', changeOrigin: true }));
+app.use(['/quote'], proxy({ target: 'https://quote.aetoscg-asia.com', changeOrigin: true }));
+app.use(['/content'], proxy({ target: 'https://trust.aetoscg-asia.com', changeOrigin: true }));
+
+
 if (!isDev) {
   const serverApp = require('../dist/server.js');
   const template = fs.readFileSync(path.join(__dirname, '../dist/server.ejs'), 'utf8');
@@ -29,6 +35,9 @@ app.use(function(error, req, res, next) {
   console.log(error)
   res.status(500).send(error)
 })
+
+
+
 
 app.listen(3333, function() {
   console.log('host:3333')

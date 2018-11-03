@@ -1,0 +1,23 @@
+.bord-all-chart {
+    overflow: hidden;
+    .scroll {
+        height: 340px;
+    }
+    .table-box {
+        float: left;
+        width: 50%;
+    }
+    .chart-img-box {
+        width:50%;
+        float: left;
+        padding: 52px 20px;
+    }
+    @include phoneVertical{
+        .table-box{
+            width:100%;
+        }
+        .chart-img-box {
+            display:none;
+        }
+    }
+}

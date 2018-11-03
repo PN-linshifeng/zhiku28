@@ -2,6 +2,9 @@ const merge = require('webpack-merge');
 const path = require("path");
 const webpack = require('webpack');
 const baseConfig = require('./webpack.base.js');
+baseConfig.module.rules[1].use = [{
+  loader: "css-loader/locals" // 使用locals会直接使用browser编译好的css
+}]
 
 module.exports = merge(baseConfig, {
   target: 'node',
@@ -14,12 +17,15 @@ module.exports = merge(baseConfig, {
   output: {
     filename: 'server.js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: "",
+    publicPath: "/public/",
     libraryTarget: 'commonjs2'
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.API_BASE': '"http://127.0.0.0:3000"'
+      'process.env.CONTENT': '"https://content.aetoscg-asia.com"',
+      'process.env.QUOTE': '"https://quote.aetoscg-asia.com"',
+      'process.env.TRUST': '"https://trust.aetoscg-asia.com"',
+      'process.env.TARGET': '"node"'
     })
   ]
 });

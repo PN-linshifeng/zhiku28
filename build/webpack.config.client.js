@@ -78,15 +78,40 @@ if (devMode) {
     open: true,
     host: '0.0.0.0',
     historyApiFallback: {
-      index: '/public/index.html'
+      rewrites: [
+        { from: /^\/$/, to: '/public/index.html' },
+        { from: /^\/subpage/, to: '/views/subpage.html' },
+        { from: /./, to: '/public/index.html' }
+      ]
+      // index: '/public/index.html'
     },
     hot: true, // 使用热加载插件 HotModuleReplacementPlugin
     overlay: {
       warnings: true,
       errors: true
+    },
+    proxy: {
+      '/api': {
+        target: 'https://content.aetoscg-asia.com',
+        secure: false,
+        changeOrigin: true
+      },
+      '/quote': {
+        target: 'https://quote.aetoscg-asia.com',
+        secure: false,
+        changeOrigin: true
+      },
+      '/content': {
+        target: 'https://trust.aetoscg-asia.com',
+        secure: false,
+        changeOrigin: true
+      }
+
     }
-  };
-  config.plugins.push(new webpack.HotModuleReplacementPlugin())
+  }
 }
+
+config.plugins.push(new webpack.HotModuleReplacementPlugin())
+
 
 module.exports = config;

@@ -1,0 +1,12 @@
+var SystemProp = {};
+SystemProp.domain = "http://biz.aetoscg.com";
+SystemProp.appServerUrl = "http://biz.aetoscg.com";
+SystemProp.memberServerUrl = "http://biz.aetoscg.com";
+SystemProp.trustServerUrl = "http://trust.aetoscg.com/";
+SystemProp.bizServerUrl = "http://biz.aetoscg.com";
+SystemProp.frontServerUrl = "null";
+SystemProp.quoteBrowserUrl = "https://quote.aetoscg.asia/quote";
+SystemProp.chartBrowserUrl = "https://static.aetoscg.asia/MT4";
+SystemProp.exchangeBrowserUrl = "http://218.17.246.241:8020/HL";
+SystemProp.adClientUrl = "http://promo.aetoscg.com/aetosAd";
+SystemProp.contentServiceUrl = "https://content.aetoscg.asia/api";

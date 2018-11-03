@@ -8,5 +8,6 @@ export default () => {
       <Helmet>
         <title>找不到页面</title>
       </Helmet>
+      <div>404</div>
     </div>)
 };

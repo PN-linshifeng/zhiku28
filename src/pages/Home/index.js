@@ -1,71 +1,81 @@
-import React from "react";
+import React from 'react';
 import {
   observer,
-  inject //注入数据
-} from "mobx-react";
+  inject, //注入数据
+} from 'mobx-react';
 import Helmet from 'react-helmet';
+import Logo from '../../static/images/logo.png';
+import './style.scss'
 
-
-@inject((stores) => {
+@inject(stores => {
   return {
     appState: stores.appState,
-    newsStore: stores.newsStore
-  }
-}) @observer
+    newsStore: stores.newsStore,
+    eXStore: stores.eXStore
+  };
+})
+@observer
 class Home extends React.Component {
   componentDidMount() {
-    console.log("abc")
-    const { newsStore } = this.props
-    newsStore.queryNews().then(() => {
-      // console.log(data)
-    }).catch(err => {
-      console.log(err) // eslint-disable-line
+    console.log('abc');
+    const { newsStore, eXStore } = this.props;
+
+    newsStore.queryNews().then(() => {}).catch(err => {
+      console.log(err); // eslint-disable-line
     });
 
-    // console.warn(s)
+    eXStore.fetchEx().then(() => {});
+
   }
 
-  change = (event) => {
-    var {
-      appState
-    } = this.props;
+  change = event => {
+    var { appState } = this.props;
     appState.reName(event.target.value);
-  }
+  };
   bootstrap() {
-    var { appState, newsStore } = this.props
-    console.log("bootstrap")
-    new Promise((resolve) => {
-      setTimeout(() => {
-        appState.count = 100;
-        resolve(true)
-      })
-    })
-    return new Promise((resolve, reject) => {
-      newsStore.queryNews().then(() => {
-        // newsStore.news = "abc"
-        resolve()
-      }).catch(err => {
-        reject(err) // eslint-disable-line
-      });
-    })
+    var { newsStore, eXStore } = this.props;
+
+    var a1 = new Promise((resolve, reject) => {
+      newsStore
+        .queryNews()
+        .then((data) => {
+          // newsStore.news = "abc"
+          resolve(data);
+        })
+        .catch(err => {
+          reject(err); // eslint-disable-line
+        });
+    });
+    var a2 = new Promise((resolve, reject) => {
+      eXStore
+        .fetchEx()
+        .then((data) => {
+          resolve(data);
+        })
+        .catch(err => {
+          reject(err); // eslint-disable-line
+        });
+    });
+    return Promise.all([a1, a2]).then(() => {
+
+    }).catch(e => console.log(e))
   }
 
   render() {
-    const {
-      appState,
-      newsStore
-    } = this.props;
+    const { appState, eXStore } = this.props;
     return (
       <div>
         <Helmet>
           <title>title智库28</title>
         </Helmet>
+
         智库28---
+        <img src={Logo} alt="搜索" />
         <input type="text" onChange={this.change} />
         {appState.msg}
-        <p>{JSON.stringify(newsStore.news)}</p>
+        <p>{JSON.stringify(eXStore.ex)}</p>
       </div>
-    )
+    );
   }
 }
 export default Home;

@@ -24,8 +24,6 @@ export default class AppState {
 
   //用于服务端渲染生成前后端同构数据
   toJson() {
-    console.log("toJson")
-    console.log(this.count)
     return {
       count: this.count,
       name: this.name

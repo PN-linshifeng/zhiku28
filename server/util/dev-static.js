@@ -9,7 +9,6 @@ const serverConfig = require('../../build/webpack.config.server');
 const serverRender = require('./server-render.js');
 const serverCompiler = webpack(serverConfig);
 
-console.log(serverRender)
 
 const getTemplate = () => {
   return new Promise((resolve, reject) => {
