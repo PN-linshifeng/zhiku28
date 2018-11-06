@@ -66,7 +66,7 @@ class News extends React.Component {
 
     // const { current } = this.state;
     return (
-      <BaseLayout>
+      <BaseLayout {...this.props}>
         <Helmet>
           <title>市场要闻</title>
         </Helmet>

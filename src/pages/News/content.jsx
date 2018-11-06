@@ -90,7 +90,7 @@ class NewsContent extends React.Component {
       newsStore: { newsContentLoading, newsContent, newsAside, newsAsideLoading }
     } = this.props;
     return (
-      <BaseLayout>
+      <BaseLayout {...this.props}>
         <Helmet>
           <title>{newsContent.title || '市场要闻内容'}</title>
         </Helmet>

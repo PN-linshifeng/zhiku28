@@ -71,10 +71,9 @@ class Ec extends React.Component {
       eXStore: { exDateTime, exDateTimeLoading, ex, exLoading },
     } = this.props;
     const { date } = this.state
-    // console.log('exDateTime', exDateTime.time)
-    // console.log('exDateTime999')
+
     return (
-      <BaseLayout>
+      <BaseLayout {...this.props}>
         <Helmet>
           <title>财经日历</title>
         </Helmet>

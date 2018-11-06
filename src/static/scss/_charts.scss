@@ -1,23 +1,35 @@
 .bord-all-chart {
-    overflow: hidden;
-    .scroll {
-        height: 340px;
-    }
+  overflow: hidden;
+
+  .scroll {
+    height: 450px;
+  }
+
+  .table-box {
+    float: left;
+    width: 50%;
+  }
+
+  .chart-img-box {
+    max-width: 449px;
+    width: 50%;
+    float: left;
+    padding: 52px 20px;
+    position: relative;
+  }
+
+  img {
+    position: relative;
+    z-index: 2
+  }
+
+  @include phoneVertical {
     .table-box {
-        float: left;
-        width: 50%;
+      width: 100%;
     }
+
     .chart-img-box {
-        width:50%;
-        float: left;
-        padding: 52px 20px;
+      display: none;
     }
-    @include phoneVertical{
-        .table-box{
-            width:100%;
-        }
-        .chart-img-box {
-            display:none;
-        }
-    }
+  }
 }

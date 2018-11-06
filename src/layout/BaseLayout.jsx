@@ -10,7 +10,7 @@ class BaseLayout extends React.Component {
     const { children } = this.props;
     return (
       <div ref={node => (this.node = node)}>
-        <Header />
+        <Header {...this.props} />
         {children ? children : ''}
         <Footer />
       </div>

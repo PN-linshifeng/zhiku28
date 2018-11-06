@@ -14,6 +14,7 @@ let config = merge(baseConfig, {
   // devtool: 'source-map', //'inline-source-map', //这有助于解释说明我们的目的（仅解释说明，不要用于生产环境）
   entry: {
     vendor: [
+      "babel-polyfill",
       'react',
       'react-dom',
       'react-router-dom'
@@ -68,7 +69,7 @@ if (devMode) {
   config.mode = 'development';
   config.devtool = 'inline-source-map';
   config.entry = {
-    app: ['react-hot-loader/patch', './src/index.js']
+    app: ["babel-polyfill", 'react-hot-loader/patch', './src/index.js']
   };
   config.devServer = {
     contentBase: path.join(__dirname, "../dist"), //告诉服务器从哪里提供内容。只有在你想要提供静态文件时才需要。devServer.publicPath 将用于确定应该从哪里提供 bundle，并且此选项优先 。跟入口的path相同
