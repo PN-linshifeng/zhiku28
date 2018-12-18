@@ -9,19 +9,19 @@ export default () => {
         <div className="container">
           <Link title="首页" to="/">
             首页
-          </Link>{' '}
+          </Link>
           |
           <Link title="关于我们" to="about.html">
             关于我们
-          </Link>{' '}
+          </Link>
           |
           <Link title="风险提示" to="risk-warning.html">
             风险提示
-          </Link>{' '}
+          </Link>
           |
           <Link title="免责声明" to="disclaimer.html">
             免责声明
-          </Link>{' '}
+          </Link>
           |
           <Link title="隐私条款" to="privacy-policy.html">
             隐私条款
@@ -38,6 +38,28 @@ export default () => {
           <br />
           ZHIKU28-COPYRIGHT © 2018 保留所有版权
           <br />
+          <p className="service-items">
+            <span>艾拓思官网服务项目：</span>
+            <a title="艾拓思外汇" href="https://www.aetoscg-asia.com" target="_blank" rel="noreferrer noopener">
+              艾拓思外汇
+            </a>
+            ，
+            <a title="艾拓思外汇平台" href="https://www.aetoscg-asia.com" target="_blank" rel="noreferrer noopener">
+              艾拓思外汇平台
+            </a>
+            ,
+            <a title="艾拓思官网" href="https://www.aetoscg-asia.com" target="_blank" rel="noreferrer noopener">
+              艾拓思官网
+            </a>
+            ,
+            <a title="AETOS" href="https://www.aetoscg-asia.com" target="_blank" rel="noreferrer noopener">
+              AETOS
+            </a>
+            ,
+            <a title="AETOS外汇" href="https://www.aetoscg-asia.com" target="_blank" rel="noreferrer noopener">
+              AETOS外汇
+            </a>
+          </p>
         </div>
       </div>
     </div>

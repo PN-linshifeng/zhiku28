@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import qs from 'qs'
 import Breadcrumb from '@component/Breadcrumb';
 import NewsList from '@component/News/list';
+import AboutBanner from '@component/AboutBanner';
 import bnImg from '@images/news-bn-img.png';
 import BaseLayout from '../../layout/BaseLayout';
 
@@ -16,22 +17,13 @@ import BaseLayout from '../../layout/BaseLayout';
 @observer
 class News extends React.Component {
   state = {}
-  // static getDerivedStateFromProps(nextProps) {
-  //   const { newsStore, location } = nextProps;
-  //   const urlObj = qs.parse(location.search.split('?')[1]);
-  //   const currentPages = urlObj.page ? parseInt(urlObj.page, 10) : 1;
-  //   if (newsStore.loading || currentPages !== newsStore.currentPages) {
-  //     newsStore.queryNews({ startAt: currentPages });
-  //   }
-  //   return null
-  // }
   breadcrumb = [{ txt: '首页', link: '/' }, { txt: '市场要闻' }];
 
   componentDidMount() {
     const { newsStore, location } = this.props;
     const urlObj = qs.parse(location.search.split('?')[1]);
     const currentPages = urlObj.page ? parseInt(urlObj.page, 10) : 1;
-    if (newsStore.loading || currentPages !== newsStore.currentPages) {
+    if (newsStore.loading || currentPages !== newsStore.currentPages || newsStore.news.cat != 33) {
       newsStore.queryNews({ startAt: currentPages });
     }
   }
@@ -70,17 +62,9 @@ class News extends React.Component {
         <Helmet>
           <title>市场要闻</title>
         </Helmet>
-        <div className="container-full about-banner news-banner margin-block">
-          <div className="container flex-center-left">
-            <div className="txt ">
-              <h2>了解市场动态，把握交易机会</h2>
-              <p>每交易日为您前瞻市场机遇</p>
-            </div>
-            <div className="img">
-              <img src={bnImg} alt="市场要闻" />
-            </div>
-          </div>
-        </div>
+        <AboutBanner title="了解市场动态，把握交易机会" content="每交易日为您前瞻市场机遇">
+          <img src={bnImg} alt="市场要闻" />
+        </AboutBanner>
         <Breadcrumb data={this.breadcrumb} />
         <div className="container about-title bfc">
           <h1 className="f-l">市场要闻</h1>

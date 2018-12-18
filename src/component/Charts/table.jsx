@@ -10,7 +10,6 @@ class Table extends React.PureComponent {
     const { onChangeImg, charts } = this.props
     const { cur } = this.state;
     if (charts.length <= 0) return;
-    console.log(charts[cur].p)
     if (onChangeImg && Object.prototype.toString.call(onChangeImg) === '[object Function]') {
       onChangeImg(`https://static.aetoscg.asia/MT4/${charts[cur].p}1_409x286x2.gif`)
     }
@@ -71,7 +70,7 @@ class Table extends React.PureComponent {
     if (charts && charts.length > 0 && !onChangeImg) {
       const time = new Date().getTime();
       const Tr = (
-        <tr key={time}>
+        <tr key='tr'>
           <td colSpan="5" style={{ position: 'relative' }}>
             <div className="loading absolute" />
             <img
@@ -79,13 +78,13 @@ class Table extends React.PureComponent {
               alt=""
               width="409"
               height="286"
+              style={{position:'relative',zIndex:2,margin:'10px 0 0 0'}}
             />
           </td>
         </tr>
       );
       Item.splice(cur + 1, 0, Tr);
     }
-    console.log(cur);
     return (
       <table className="market-trend-tbody table-body">
         <tbody>{Item}</tbody>

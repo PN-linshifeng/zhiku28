@@ -92,7 +92,9 @@ class NewsContent extends React.Component {
     return (
       <BaseLayout {...this.props}>
         <Helmet>
-          <title>{newsContent.title || '市场要闻内容'}</title>
+          <title>{newsContent.title || '正在加载中...'}</title>
+          <meta name="description" content={newsContent.title} />
+          <meta name="keywords" content={newsContent.title} />
         </Helmet>
         <AboutBanner title="了解市场动态，把握交易机会" content="每交易日为您前瞻市场机遇">
           <img src={bnImg} alt="市场要闻" />

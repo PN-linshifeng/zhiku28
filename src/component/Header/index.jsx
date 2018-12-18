@@ -43,9 +43,8 @@ export default class Header extends React.Component {
               <img src={Logo} alt="AETOS艾拓思智库28Logo" />
             </Link>
           </div>
-          <label htmlFor="checkbox-nav" className="checkbox-nav">
-            <input type="checkbox" className="disn" id="checkbox-nav" />
-          </label>
+          <input type="checkbox" className="disn" id="checkbox-nav" />
+          <label htmlFor="checkbox-nav" className="checkbox-nav" /> {/* eslint-disable-line*/}
           <div className="nav">
             <ul>
               <li>
@@ -105,13 +104,14 @@ export default class Header extends React.Component {
                 </div>
               </li>
               <li>
-                <NavLink
-                  to="https://www.aetoscg-asia.com/intl/cn/"
+                <a
+                  href="http://r.theaetos.com/www/intl/cn/"
                   title="外汇经纪商"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   外汇经纪商
-                </NavLink>
+                </a>
               </li>
             </ul>
           </div>

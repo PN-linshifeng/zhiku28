@@ -5,7 +5,7 @@ export default props => {
   const { data } = props;
   const list = data.map(item => {
     return (
-      <span key={item.txt}>
+      <span key={item.key||item.txt}>
         {
           item.link?<Link to={item.link} title={item.txt}>{item.txt}</Link>:item.txt
         }

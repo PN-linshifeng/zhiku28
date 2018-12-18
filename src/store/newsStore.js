@@ -19,8 +19,21 @@ class NewsStore {
   @observable newsContent
   @observable currentPages
   @observable newsAsideLoading
+  @observable marketCommentary
+  @observable marketCommentaryLoading
 
-  constructor({ loading = true, news = {}, newsAsideLoading = true, newsAside = {}, currentPages = 1, newsContentLoading = true, newsContent = {} } = {}) {
+  constructor({
+    loading = true,
+    news = {},
+    newsAsideLoading = true,
+    newsAside = {},
+    currentPages = 1,
+    newsContentLoading = true,
+    newsContent = {},
+    // marketCommentary={},
+    // marketCommentaryLoading=true
+
+  } = {}) {
     this.loading = loading
     this.news = news
     this.currentPages = currentPages
@@ -28,8 +41,10 @@ class NewsStore {
     this.newsContent = newsContent
     this.newsAside = newsAside
     this.newsAsideLoading = newsAsideLoading
+    // this.marketCommentary=marketCommentaryLoading
+    // this.marketCommentaryLoading=marketCommentaryLoading
   }
-
+  //cat=38 是汇评  33新闻
   @action queryNews({
     product = 'forex',
     isTc = false,

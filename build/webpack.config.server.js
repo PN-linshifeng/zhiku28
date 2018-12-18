@@ -22,9 +22,10 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.CONTENT': '"https://content.aetoscg-asia.com"',
-      'process.env.QUOTE': '"https://quote.aetoscg-asia.com"',
-      'process.env.TRUST': '"https://trust.aetoscg-asia.com"',
+      'process.env.CONTENT': '"https://content.aetoscg.info"',
+      'process.env.QUOTE': '"https://quote.aetoscg.info/quote"',
+      'process.env.TRUST': '"http://r.theaetos.com/trust"',
+      'process.env.BASE': '"http://localhost:3333"',
       'process.env.TARGET': '"node"'
     })
   ]

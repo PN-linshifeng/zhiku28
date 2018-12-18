@@ -6,7 +6,7 @@ import Ec from './Ec'
 // import PerfectScrollbar from '../../static/js/perfect-scrollbar.min.js';
 import './style.scss';
 
-require('jquery');
+// require('jquery');
 
 class Economic extends React.Component {
   constructor(props) {

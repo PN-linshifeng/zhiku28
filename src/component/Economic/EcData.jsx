@@ -10,7 +10,7 @@ export default props => {
 
   const item =
     ex.length > 0 ? (
-      ex.map(item => {
+      ex.map((item, index) => {
         let str = '';
         if (substr) {
           str = item.cn_event.substr(0, substr) + '...';
@@ -18,16 +18,16 @@ export default props => {
           str = item.cn_event;
         }
         return (
-          <tr key={Math.random()}>
-            <td>{item.pub_time}</td>
-            <td>{item.region_code}</td>
+          <tr key={index}>{/*eslint-disable-line*/}
+            <td width="60">{item.pub_time}</td>
+            <td width="60">{item.region_code}</td>
             <td>{str}</td>
-            <td>
+            <td width="70">
               <span className={item.importance}>{importance[item.importance]}</span>
             </td>
-            <td>{item.prior}</td>
-            <td>{item.forecast}</td>
-            <td>{item.actual}</td>
+            <td width="70">{item.prior}</td>
+            <td width="70">{item.forecast}</td>
+            <td width="70">{item.actual}</td>
           </tr>
         );
       })

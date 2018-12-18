@@ -6,7 +6,11 @@ import Breadcrumb from '@component/Breadcrumb';
 import ChartsComponent from '@component/Charts';
 import bnImg from '@images/about-bn-img.png';
 import Loading from '@component/Loading';
+import PerfectScrollbar from 'perfect-scrollbar';
+import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import BaseLayout from '../../layout/BaseLayout';
+
+
 
 @inject(stores => {
   return {
@@ -25,7 +29,9 @@ class Charts extends React.Component {
   ];
   componentDidMount() {
     const { chartsStore } = this.props;
-    chartsStore.queryCharts();
+    chartsStore.queryCharts().then(() => {
+      new PerfectScrollbar('.scroll-charts')
+    });
   }
 
   changeImg = (src) => {
@@ -67,6 +73,7 @@ class Charts extends React.Component {
           <div className="bord-all-chart">
             <ChartsComponent charts={charts} onChangeImg={this.changeImg} />
             <div className="chart-img-box">
+              {src}
               <Loading className="absolute" />
               <img src={src} alt="" width="409" height="286" />
             </div>

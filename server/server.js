@@ -3,16 +3,35 @@ const fs = require("fs");
 const favicon = require('express-favicon');
 const path = require("path")
 var proxy = require('http-proxy-middleware');
-const serverRender = require('./util/server-render')
+var https = require('https');
+const serverRender = require('./util/server-render');
 
 const isDev = process.env.NODE_ENV === 'development';
 const app = express();
 
-
 app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
-app.use(['/api'], proxy({ target: 'https://content.aetoscg-asia.com', changeOrigin: true }));
-app.use(['/quote'], proxy({ target: 'https://quote.aetoscg-asia.com', changeOrigin: true }));
-app.use(['/content'], proxy({ target: 'https://trust.aetoscg-asia.com', changeOrigin: true }));
+app.use(['/api'], proxy({
+  target: 'https://content.aetos-chinese.com',
+  changeOrigin: true,
+  agent: new https.Agent({
+    rejectUnauthorized: false
+  })
+}));
+app.use(['/quote'], proxy({
+  target: 'https://quote.aetos-chinese.com',
+  changeOrigin: true,
+  agent: new https.Agent({
+    rejectUnauthorized: false
+  })
+}));
+app.use(['/content'], proxy({
+  target: 'https://trust.aetos-chinese.com',
+  changeOrigin: true,
+  agent: new https.Agent({
+    rejectUnauthorized: false
+  })
+}));
+
 
 
 if (!isDev) {

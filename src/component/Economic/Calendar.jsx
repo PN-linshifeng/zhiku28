@@ -59,6 +59,7 @@ class Rc extends React.Component {
     return (
       <Calendar
         showWeekNumber={false}
+        fullscreen={false}
         locale={cn ? zhCN : enUS}
         value={moment(eventDate)}
         defaultValue={moment(eventDate)}
