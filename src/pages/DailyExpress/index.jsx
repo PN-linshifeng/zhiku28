@@ -60,7 +60,7 @@ class News extends React.Component {
           <meta name="keywords" content={dataList.keywords} />
 
         </Helmet>
-        <AboutBanner title="每天为您纵观市场动向" content="交易策略智珠在握" />
+        <AboutBanner title="每天为您纵观市场动向" content="交易策略智珠在握" className="daily-express-bn" />
         <Breadcrumb data={this.breadcrumb} />
         <div className="container about-title bfc">
           <h1 className="f-l">策略微观</h1>

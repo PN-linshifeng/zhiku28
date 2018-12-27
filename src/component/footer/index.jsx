@@ -40,23 +40,23 @@ export default () => {
           <br />
           <p className="service-items">
             <span>艾拓思官网服务项目：</span>
-            <a title="艾拓思外汇" href="https://www.aetoscg-asia.com" target="_blank" rel="noreferrer noopener">
+            <a title="艾拓思外汇" href="http://r.theaetos.com/www/intl/cn/" target="_blank" rel="noreferrer noopener">
               艾拓思外汇
             </a>
             ，
-            <a title="艾拓思外汇平台" href="https://www.aetoscg-asia.com" target="_blank" rel="noreferrer noopener">
+            <a title="艾拓思外汇平台" href="http://r.theaetos.com/www/intl/cn/" target="_blank" rel="noreferrer noopener">
               艾拓思外汇平台
             </a>
             ,
-            <a title="艾拓思官网" href="https://www.aetoscg-asia.com" target="_blank" rel="noreferrer noopener">
+            <a title="艾拓思官网" href="http://r.theaetos.com/www/intl/cn/" target="_blank" rel="noreferrer noopener">
               艾拓思官网
             </a>
             ,
-            <a title="AETOS" href="https://www.aetoscg-asia.com" target="_blank" rel="noreferrer noopener">
+            <a title="AETOS" href="http://r.theaetos.com/www/intl/cn/" target="_blank" rel="noreferrer noopener">
               AETOS
             </a>
             ,
-            <a title="AETOS外汇" href="https://www.aetoscg-asia.com" target="_blank" rel="noreferrer noopener">
+            <a title="AETOS外汇" href="http://r.theaetos.com/www/intl/cn/" target="_blank" rel="noreferrer noopener">
               AETOS外汇
             </a>
           </p>

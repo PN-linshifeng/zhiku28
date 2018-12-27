@@ -70,7 +70,7 @@ class News extends React.Component {
         <Helmet>
           <title>AETOS汇评</title>
         </Helmet>
-        <AboutBanner title="了解市场动态，把握交易机会" content="每交易日为您前瞻市场机遇" />
+        <AboutBanner title="了解市场动态，把握交易机会" content="每交易日为您前瞻市场机遇" className="market-commentary-banner" />
         <Breadcrumb data={this.breadcrumb} />
         <div className="container about-title bfc">
           <h1 className="f-l">AETOS汇评</h1>

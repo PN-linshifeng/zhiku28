@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import AboutBanner from '@component/AboutBanner';
 import Breadcrumb from '@component/Breadcrumb';
 
-import bnImg from '@images/about-bn-img.png';
+// import bnImg from '@images/about-bn-img.png';
 import eco from '@images/eco-item.png';
 import forex from '@images/forex-item-img.png';
 
@@ -13,16 +13,15 @@ import BaseLayout from '../../layout/BaseLayout';
 export default props => {
   const breadcrumb = [
     { txt: '首页', link: '/' },
-    { txt: '交易工具', link: '/trading-tools.htmll' },
-    { txt: '外汇行情' },
+    { txt: '交易工具' },
   ];
   return (
     <BaseLayout {...props}>
       <Helmet>
         <title>交易工具</title>
       </Helmet>
-      <AboutBanner title="了解市场动态，把握交易机会" content="每交易日为您前瞻市场机遇">
-        <img src={bnImg} alt="交易工具" />
+      <AboutBanner title="了解市场动态，把握交易机会" content="每交易日为您前瞻市场机遇" className="trading-tools-bn">
+        <img src="/public/images/trading-tools-bn.png" alt="交易工具" />
       </AboutBanner>
       <Breadcrumb data={breadcrumb} />
       <div className="container trading-tools-list margin-block">

@@ -4,7 +4,13 @@ import Loading from '@component/Loading';
 class Table extends React.PureComponent {
   state = {
     cur: 0,
+    isPhone: false,
   };
+  componentDidMount() {
+    this.setState({
+      isPhone: document.documentElement.clientWidth <= 573 ? true : false,
+    })
+  }
 
   componentDidUpdate() {
     const { onChangeImg, charts } = this.props
@@ -29,7 +35,8 @@ class Table extends React.PureComponent {
 
   render() {
     const { charts, onChangeImg } = this.props;
-    const { cur } = this.state;
+    const { cur, isPhone } = this.state;
+    console.log(isPhone)
     const Item =
       charts && charts.length > 0 ? (
         charts.map((item, index) => {
@@ -67,7 +74,7 @@ class Table extends React.PureComponent {
         </tr>
       );
 
-    if (charts && charts.length > 0 && !onChangeImg) {
+    if (charts && charts.length > 0 && !onChangeImg || isPhone && charts && charts.length > 0) {
       const time = new Date().getTime();
       const Tr = (
         <tr key='tr'>

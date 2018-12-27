@@ -99,8 +99,9 @@ class NewsContent extends React.Component {
         <AboutBanner title="了解市场动态，把握交易机会" content="每交易日为您前瞻市场机遇">
           <img src={bnImg} alt="市场要闻" />
         </AboutBanner>
+        <div ref={node => (this.node = node)} />
         <Breadcrumb data={this.breadcrumb} />
-        <div className="container about-title bfc" ref={node => (this.node = node)}>
+        <div className="container about-title bfc">
           <h1 className="f-l">市场要闻</h1>
           <div className="f-r" />
         </div>
