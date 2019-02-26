@@ -18,7 +18,9 @@ export default props => {
   return (
     <BaseLayout {...props}>
       <Helmet>
-        <title>交易工具</title>
+        <title>交易工具_艾拓思</title>
+        <meta name="description" content="外汇行情,财经日历,艾拓思,艾拓思专场" />
+        <meta name="keywords" content="外汇行情,财经日历,艾拓思,艾拓思专场" />
       </Helmet>
       <AboutBanner title="了解市场动态，把握交易机会" content="每交易日为您前瞻市场机遇" className="trading-tools-bn">
         <img src="/public/images/trading-tools-bn.png" alt="交易工具" />

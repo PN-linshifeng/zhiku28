@@ -51,6 +51,9 @@ const getStoreState = (stores) => {
 
 const template = fs.readFileSync('./dist/server.ejs', 'utf8');
 app.use('/public', express.static('./dist'));
+app.use('/googleeb45709a26184efb.html', express.static('./dist/googleeb45709a26184efb.html'));
+app.use('/3.html', express.static('./dist/3.html'));
+app.use('/5.html', express.static('./dist/5.html'));
 app.get("*", function(req, res, next) {
   render(serverApp, createStoreMap, template, req, res).catch(next)
 });

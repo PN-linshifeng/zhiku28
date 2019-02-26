@@ -60,7 +60,9 @@ class Charts extends React.Component {
     return (
       <BaseLayout {...this.props}>
         <Helmet>
-          <title>外汇行情</title>
+          <title>外汇行情_艾拓思</title>
+          <meta name="description" content="艾拓思外汇行情,艾拓思,艾拓思专场" />
+          <meta name="keywords" content="了解艾拓思外汇行情，每交易日为您前瞻市场机" />
         </Helmet>
         <AboutBanner
           title="了解市场动态，把握交易机会"

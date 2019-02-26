@@ -32,7 +32,7 @@ app.use(['/content'], proxy({
   })
 }));
 
-
+app.use('/googleeb45709a26184efb.html', express.static(path.join(__dirname, '../dist/googleeb45709a26184efb.html')));
 
 if (!isDev) {
   const serverApp = require('../dist/server.js');

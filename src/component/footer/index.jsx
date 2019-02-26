@@ -47,15 +47,15 @@ export default () => {
             <a title="艾拓思外汇平台" href="http://r.theaetos.com/www/intl/cn/" target="_blank" rel="noreferrer noopener">
               艾拓思外汇平台
             </a>
-            ,
+            ，
             <a title="艾拓思官网" href="http://r.theaetos.com/www/intl/cn/" target="_blank" rel="noreferrer noopener">
               艾拓思官网
             </a>
-            ,
+            ，
             <a title="AETOS" href="http://r.theaetos.com/www/intl/cn/" target="_blank" rel="noreferrer noopener">
               AETOS
             </a>
-            ,
+            ，
             <a title="AETOS外汇" href="http://r.theaetos.com/www/intl/cn/" target="_blank" rel="noreferrer noopener">
               AETOS外汇
             </a>

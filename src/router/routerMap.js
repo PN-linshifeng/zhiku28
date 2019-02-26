@@ -1,27 +1,18 @@
-import React from "react";
-import {
-  BrowserRouter,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
-import routes from './routes.js'
+import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import routes from './routes.js';
 
-class RouterMap extends React.Component {
-  render() {
-    return (
-      <Switch>
-					{routes.map((route,index) => (
-				      <Route {...route} key={index}/>
-				    ))}
-					<Redirect from="/index.html" to="/"></Redirect>
-			</Switch>
-
-    )
-  }
-}
-export default RouterMap;
+export default () => {
+  return (
+    <Switch>
+      {routes.map((route) => (
+        <Route {...route} key={route.path} />
+      ))}
+      <Redirect from="/index.html" to="/" />
+    </Switch>
+  );
+};
 // {routes.map((route,index) => (
-// 				      <Route {...route} key={index}/>
-// 				    ))}
+//              <Route {...route} key={index}/>
+//            ))}
 // <Redirect from='/news' to="/reg"/>

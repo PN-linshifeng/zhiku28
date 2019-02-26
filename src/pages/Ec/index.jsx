@@ -75,7 +75,9 @@ class Ec extends React.Component {
     return (
       <BaseLayout {...this.props}>
         <Helmet>
-          <title>财经日历</title>
+          <title>财经日历_艾拓思</title>
+          <meta name="description" content="了解艾拓思财经日历，把握交易机会，每交易日为您前瞻市场机遇" />
+          <meta name="keywords" content="艾拓思,艾拓思专场,艾拓思财经日历" />
         </Helmet>
         <div className="container-full about-banner trading-tools-bn margin-block">
           <div className="container flex-center-left">

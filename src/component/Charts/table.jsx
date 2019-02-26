@@ -17,7 +17,7 @@ class Table extends React.PureComponent {
     const { cur } = this.state;
     if (charts.length <= 0) return;
     if (onChangeImg && Object.prototype.toString.call(onChangeImg) === '[object Function]') {
-      onChangeImg(`https://static.aetoscg.asia/MT4/${charts[cur].p}1_409x286x2.gif`)
+      onChangeImg(`https://static.aetoscg.info/MT4/${charts[cur].p}1_409x286x2.gif`)
     }
   }
 
@@ -26,7 +26,7 @@ class Table extends React.PureComponent {
     const { onChangeImg } = this.props
     if (cur === index) return;
     if (onChangeImg && Object.prototype.toString.call(onChangeImg) === '[object Function]') {
-      onChangeImg(`https://static.aetoscg.asia/MT4/${name}1_409x286x2.gif`)
+      onChangeImg(`https://static.aetoscg.info/MT4/${name}1_409x286x2.gif`)
     }
     this.setState({
       cur: index,

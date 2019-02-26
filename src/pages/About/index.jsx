@@ -96,7 +96,7 @@ class About extends React.Component {
     return (
       <BaseLayout {...this.props}>
         <Helmet>
-          <title>{aboutStore.data.title || '正在加载中...'}</title>
+          <title>{aboutStore.data.title?aboutStore.data.title+'_艾拓思' : '正在加载中...'}</title>
           <meta name="description" content={aboutStore.data.title} />
           <meta name="keywords" content={aboutStore.data.title} />
         </Helmet>

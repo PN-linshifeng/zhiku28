@@ -3,10 +3,21 @@ import axios from 'axios';
 import https from 'https';
 
 const instance = axios.create({
+  // node https代理设置
   httpsAgent: new https.Agent({
     rejectUnauthorized: false
   })
 });
+
+// instance.interceptors.request.use(function(config) {
+//   // 在发送请求之前做些什么
+//   config.headers['token'] = []
+//   return config;
+// }, function(error) {
+//   // 对请求错误做些什么
+//   return Promise.reject(error);
+// });
+
 
 const CONTENT = process.env.CONTENT || ''; // eslint-disable-line
 const QUOTE = process.env.QUOTE || ''; // eslint-disable-line

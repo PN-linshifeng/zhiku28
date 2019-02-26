@@ -60,7 +60,9 @@ class News extends React.Component {
     return (
       <BaseLayout {...this.props}>
         <Helmet>
-          <title>市场要闻</title>
+          <title>市场要闻_艾拓思</title>
+          <meta name="keywords" content="艾拓思市场要闻,艾拓思,艾拓思专场" />
+          <meta name="description" content="了解市场动态，把握交易机会，每交易日为您前瞻市场机遇" />
         </Helmet>
         <AboutBanner title="了解市场动态，把握交易机会" content="每交易日为您前瞻市场机遇">
           <img src={bnImg} alt="市场要闻" />

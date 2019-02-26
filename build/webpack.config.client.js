@@ -72,6 +72,9 @@ if (devMode) {
       'react-hot-loader/patch', './src/index.js'
     ]
   };
+  // config.output={
+  //   publicPath: "/",
+  // }
   config.devServer = {
     contentBase: path.join(__dirname, "../dist"), //告诉服务器从哪里提供内容。只有在你想要提供静态文件时才需要。devServer.publicPath 将用于确定应该从哪里提供 bundle，并且此选项优先 。跟入口的path相同
     publicPath: '/public/', //打包文件目录，跟output.publicPath相同
